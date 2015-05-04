@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and abstract="true" mandatory="true" name="MinhNguyenTask1">
+				<and mandatory="true" name="OnlineWarehouse">
+					<or mandatory="true" name="CRUD">
+						<feature mandatory="true" name="Create"/>
+						<feature mandatory="true" name="Read"/>
+						<feature mandatory="true" name="Update"/>
+						<feature mandatory="true" name="Delete"/>
+					</or>
+					<or mandatory="true" name="Users">
+						<or mandatory="true" name="SuperUsers">
+							<feature mandatory="true" name="Admins"/>
+							<feature mandatory="true" name="Supporters"/>
+							<feature mandatory="true" name="SuperAdmins"/>
+						</or>
+						<and mandatory="true" name="Customers">
+							<feature mandatory="true" name="Orders"/>
+							<feature name="Wishlist"/>
+						</and>
+					</or>
+					<or mandatory="true" name="Products">
+						<and mandatory="true" name="Digital">
+							<feature name="DRM"/>
+							<feature name="DRMFree"/>
+						</and>
+						<feature mandatory="true" name="Physical"/>
+					</or>
+					<and name="Coupon">
+						<feature name="VoucherCodes"/>
+						<feature name="StudentProgram"/>
+						<feature name="BusinessClient"/>
+					</and>
+				</and>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
