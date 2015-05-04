@@ -3,7 +3,13 @@
 		<struct>
 			<and abstract="true" mandatory="true" name="MinhNguyenTask1">
 				<and mandatory="true" name="OnlineWarehouse">
+					<description>
+						Something like amazon but very small in scope and size
+					</description>
 					<or mandatory="true" name="CRUD">
+						<description>
+							The very basic methods that operate on Entities (users, products, ...)
+						</description>
 						<feature mandatory="true" name="Create"/>
 						<feature mandatory="true" name="Read"/>
 						<feature mandatory="true" name="Update"/>
@@ -20,18 +26,18 @@
 							<feature name="Wishlist"/>
 						</and>
 					</or>
-					<or mandatory="true" name="Products">
-						<and mandatory="true" name="Digital">
-							<feature name="DRM"/>
-							<feature name="DRMFree"/>
-						</and>
+					<and mandatory="true" name="Products">
+						<or name="Digital">
+							<feature mandatory="true" name="DRM"/>
+							<feature mandatory="true" name="DRMFree"/>
+						</or>
 						<feature mandatory="true" name="Physical"/>
-					</or>
-					<and name="Coupon">
-						<feature name="VoucherCodes"/>
-						<feature name="StudentProgram"/>
-						<feature name="BusinessClient"/>
 					</and>
+					<or name="Coupon">
+						<feature mandatory="true" name="VoucherCodes"/>
+						<feature mandatory="true" name="StudentProgram"/>
+						<feature mandatory="true" name="BusinessClient"/>
+					</or>
 				</and>
 			</and>
 		</struct>
