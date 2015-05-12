@@ -10,32 +10,78 @@
 						<description>
 							The very basic methods that operate on Entities (users, products, ...)
 						</description>
-						<feature mandatory="true" name="Create"/>
-						<feature mandatory="true" name="Read"/>
-						<feature mandatory="true" name="Update"/>
-						<feature mandatory="true" name="Delete"/>
+						<feature mandatory="true" name="Create">
+							<description>
+								zum Anlegen von Users/Produkte
+							</description>
+						</feature>
+						<feature mandatory="true" name="Read">
+							<description>
+								Zum Auslesen von Users/Produkte
+							</description>
+						</feature>
+						<feature mandatory="true" name="Update">
+							<description>
+								Zum Aktualisieren von Users/Produkte
+							</description>
+						</feature>
+						<feature mandatory="true" name="Delete">
+							<description>
+								Zum Löschen von Users/Produkte
+							</description>
+						</feature>
 					</or>
-					<or mandatory="true" name="Users">
+					<or abstract="true" mandatory="true" name="Users">
+						<description>
+							 
+						</description>
 						<or mandatory="true" name="SuperUsers">
+							<description>
+								Repräsentiert die Verwaltungsnutzer
+							</description>
 							<feature mandatory="true" name="Admins"/>
 							<feature mandatory="true" name="Supporters"/>
 							<feature mandatory="true" name="SuperAdmins"/>
 						</or>
 						<and mandatory="true" name="Customers">
+							<description>
+								Repräsentiert die angelegte Nutzerkontos der Kunden, die in der Seite shoppen
+							</description>
 							<feature mandatory="true" name="Orders"/>
 							<feature name="Wishlist"/>
 						</and>
 					</or>
-					<and mandatory="true" name="Products">
+					<and abstract="true" mandatory="true" name="Products">
+						<description>
+							Repräsentiert die angebotenen Artikels
+						</description>
 						<or name="Digital">
+							<description>
+								z.B. games, musics, ..
+							</description>
 							<feature mandatory="true" name="DRM"/>
 							<feature mandatory="true" name="DRMFree"/>
 						</or>
-						<feature mandatory="true" name="Physical"/>
+						<feature mandatory="true" name="Physical">
+							<description>
+								Kleidungen, Möbel, ..
+							</description>
+						</feature>
 					</and>
-					<or name="Coupon">
-						<feature mandatory="true" name="VoucherCodes"/>
-						<feature mandatory="true" name="StudentProgram"/>
+					<or abstract="true" name="Coupon">
+						<description>
+							Repräsentiert Gutschein-System
+						</description>
+						<feature mandatory="true" name="VoucherCodes">
+							<description>
+								Gutscheincodes
+							</description>
+						</feature>
+						<feature mandatory="true" name="StudentProgram">
+							<description>
+								Studenten bekommen 15% Rabatt
+							</description>
+						</feature>
 						<feature mandatory="true" name="BusinessClient"/>
 					</or>
 				</and>
