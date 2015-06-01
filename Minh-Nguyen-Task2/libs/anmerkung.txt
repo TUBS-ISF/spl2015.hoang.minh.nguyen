@@ -1,0 +1,2 @@
+Weil in .gitignore alle jar-Dateien veboten sind, kann ich daher die verwendete Library einchecken.
+Im libs-Ordner soll jsoup-1.8.2.jar gefunden werden um das Programm zum Laufen bringen zu können.
