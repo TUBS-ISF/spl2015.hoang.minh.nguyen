@@ -2,88 +2,65 @@
 	<featureModel chosenLayoutAlgorithm="1">
 		<struct>
 			<and abstract="true" mandatory="true" name="MinhNguyenTask1">
-				<and mandatory="true" name="OnlineWarehouse">
+				<and name="jURL">
 					<description>
-						Something like amazon but very small in scope and size
+						Ein keines Programm arbeitet mit URL/Web page addresses und ggf. sie manipuliert.
 					</description>
-					<or mandatory="true" name="CRUD">
+					<and name="Download">
 						<description>
-							The very basic methods that operate on Entities (users, products, ...)
+							Lade die komplette Seite herunter und ggf. anzeigen
 						</description>
-						<feature mandatory="true" name="Create">
+						<and abstract="true" name="Search">
 							<description>
-								zum Anlegen von Users/Produkte
+								Suchfunktion
 							</description>
-						</feature>
-						<feature mandatory="true" name="Read">
-							<description>
-								Zum Auslesen von Users/Produkte
-							</description>
-						</feature>
-						<feature mandatory="true" name="Update">
-							<description>
-								Zum Aktualisieren von Users/Produkte
-							</description>
-						</feature>
-						<feature mandatory="true" name="Delete">
-							<description>
-								Zum Löschen von Users/Produkte
-							</description>
-						</feature>
-					</or>
-					<or abstract="true" mandatory="true" name="Users">
-						<description>
-							 
-						</description>
-						<or mandatory="true" name="SuperUsers">
-							<description>
-								Repräsentiert die Verwaltungsnutzer
-							</description>
-							<feature mandatory="true" name="Admins"/>
-							<feature mandatory="true" name="Supporters"/>
-							<feature mandatory="true" name="SuperAdmins"/>
-						</or>
-						<and mandatory="true" name="Customers">
-							<description>
-								Repräsentiert die angelegte Nutzerkontos der Kunden, die in der Seite shoppen
-							</description>
-							<feature mandatory="true" name="Orders"/>
-							<feature name="Wishlist"/>
+							<feature name="For words">
+								<description>
+									Suche nach Schlüsselworte
+								</description>
+							</feature>
+							<and name="For Elements">
+								<description>
+									Suche nach HTML-Elemente/Tags
+								</description>
+								<feature name="Replace">
+									<description>
+										Ersetze gesuchte Elemente durch andere
+									</description>
+								</feature>
+							</and>
 						</and>
-					</or>
-					<and abstract="true" mandatory="true" name="Products">
-						<description>
-							Repräsentiert die angebotenen Artikels
-						</description>
-						<or name="Digital">
+						<and abstract="true" name="List resources">
 							<description>
-								z.B. games, musics, ..
+								 
 							</description>
-							<feature mandatory="true" name="DRM"/>
-							<feature mandatory="true" name="DRMFree"/>
-						</or>
-						<feature mandatory="true" name="Physical">
-							<description>
-								Kleidungen, Möbel, ..
-							</description>
-						</feature>
+							<feature name="All resources">
+								<description>
+									Alle Resourcen auflisten
+								</description>
+							</feature>
+							<feature name="Files">
+								<description>
+									Alle Dateien in der Webseite auflisten
+								</description>
+							</feature>
+							<feature name="Email adresses">
+								<description>
+									Alle Email-Adressen in der Seite auflisten
+								</description>
+							</feature>
+							<feature name="Youtube links">
+								<description>
+									Alle Youtube-Links auflisten
+								</description>
+							</feature>
+						</and>
 					</and>
-					<or abstract="true" name="Coupon">
+					<feature name="Ping">
 						<description>
-							Repräsentiert Gutschein-System
+							Ob der URL erreicht werden kann
 						</description>
-						<feature mandatory="true" name="VoucherCodes">
-							<description>
-								Gutscheincodes
-							</description>
-						</feature>
-						<feature mandatory="true" name="StudentProgram">
-							<description>
-								Studenten bekommen 15% Rabatt
-							</description>
-						</feature>
-						<feature mandatory="true" name="BusinessClient"/>
-					</or>
+					</feature>
 				</and>
 			</and>
 		</struct>

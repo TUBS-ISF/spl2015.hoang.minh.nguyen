@@ -1,0 +1,16 @@
+Das Projekt implementiert die zwei Features durch Kommandozeilenparameter:
+* --p URL  = Ping eines URL und dementsprechend die Ergebnisse anzeigen ob der URL erreicht werden kann
+* --s URL  = Zeige den Inhalt des URLs (Html-Code)
+* --sp URL = Führe die beiden Features aus
+
+Testanweisung:
+Man befindet sich unter dem Ordner 'bin' des Projects
+
+1. Kombination
+java -cp .;..\libs\jsoup-1.8.2.jar de.tubs.isf.spl.task2.Main --p http://www.google.com
+
+2. Kombination
+java -cp .;..\libs\jsoup-1.8.2.jar de.tubs.isf.spl.task2.Main --s http://www.google.com
+
+3. Kombination
+java -cp .;..\libs\jsoup-1.8.2.jar de.tubs.isf.spl.task2.Main --ps http://www.google.com
